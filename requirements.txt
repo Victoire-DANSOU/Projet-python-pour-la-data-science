@@ -10,11 +10,10 @@ matplotlib
 seaborn
 
 # Cartographie interactive
-folium>
+folium
 
 # Machine learning
 scikit-learn>=1.2.0
 
 # Requêtes HTTP (API data.gouv.fr)
 requests>=2.28.0
-
