@@ -1,20 +1,20 @@
-# Projet-python-pour-la-data-science
+# Analyse des accidents corporels de la circulation en France (2015–2020)
 Projet réalisé dans le cadre du cours de python pour la data science en 2A ENSAI
-# Analyse des accidents corporels de la circulation en France (2015–2024)
 
 ## Problématique
 
- **Quels facteurs (environnementaux, comportementaux, infrastructurels) influencent la gravité des accidents de la route en France, et comment ont-ils évolué entre 2015 et 2024 ?**
+ **Quels facteurs (environnementaux, comportementaux, infrastructurels) influencent la gravité des accidents de la route en France, et comment ont-ils évolué entre 2015 et 2020 ?**
 
 
 ## Structure du projet
 
 ```
 .
-├── accidents_routiers.ipynb   # Notebook principal (analyse complète)
-├── README.md                  # Ce fichier
-├── fonctions ?  (il va falloir faire ça )
-└── requirements.txt           # Dépendances Python
+├── fonctions.py # fonctions de traitement, visualisation et modélisation                  
+├── fonctions.ipynb # version notebook (optionnelle, pour lecture)
+├── main.ipynb # notebook principal qui exécute le pipeline
+├── README.md # documentation du projet
+└── requirements.txt # dépendances Python
 ```
 
 ## Source des données
@@ -24,7 +24,7 @@ Projet réalisé dans le cadre du cours de python pour la data science en 2A ENS
 - Licence : Licence Ouverte / Open Licence
 - Lien : https://www.data.gouv.fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2024
 
-- Période couverte : 2015 à 2024 (2021–2022 exclus pour incompatibilité de format)
+- Période couverte : 2015 à 2020 
 - Volume : ~2 millions de lignes (usagers impliqués dans des accidents)
 
 Les données sont téléchargées **automatiquement via l'API data.gouv.fr** au lancement du notebook — aucun fichier à télécharger manuellement.
@@ -40,7 +40,7 @@ Chaque année est composée de 4 fichiers CSV joints sur l'identifiant `Num_Acc`
 
 ---
 
-##  Contenu du notebook
+## Contenu du notebook
 
 ### 1. Récupération des données
 Interrogation de l'API data.gouv.fr pour découverte automatique des fichiers, jointure des 4 tables par année, détection automatique du séparateur CSV (`,` ou `;` selon les millésimes).
@@ -52,7 +52,7 @@ Interrogation de l'API data.gouv.fr pour découverte automatique des fichiers, j
 - Création de variables dérivées : `heure`, `week_end`, `tranche_age`, `grave` (variable cible binaire)
 
 ### 3. Analyse descriptive
-- Évolution temporelle du nombre d'accidents et de tués (2015–2024)
+- Évolution temporelle du nombre d'accidents et de tués (2015–2020)
 - Impact de la météo et de la luminosité sur la gravité
 - Profil des victimes par âge et sexe
 - Accidentalité par heure de la journée
@@ -71,33 +71,36 @@ Prédiction de la **gravité d'un accident** (grave = tué ou hospitalisé) avec
 Évaluation : AUC-ROC, F1-score, matrice de confusion, importance des variables.
 
 ---
-
-## 🚀 Lancer le notebook
+## 🚀 Exécution du projet
 
 ### Prérequis
 - Python 3.9+
 - Jupyter Notebook ou JupyterLab
 
-### Installation
+### Installation et lancement
+
+1. Cloner le dépôt :
 
 ```bash
-# Cloner le dépôt
 git clone https://github.com/<votre-compte>/<votre-repo>.git
 cd <votre-repo>
-
-# Installer les dépendances
+Installer les dépendances :
 pip install -r requirements.txt
+Lancer Jupyter :
+jupyter notebook
+Ouvrir et exécuter le notebook :
+main.ipynb
 
-# Lancer Jupyter
-jupyter notebook accidents_routiers.ipynb
-```
-
-### ⚠️ Important
+⚠️ Important
 Le notebook télécharge les données depuis internet au premier lancement (~500 Mo au total). Assurez-vous d'avoir une connexion stable. Le téléchargement peut prendre 5 à 15 minutes selon votre débit.
+
+ℹ️ Remarque
+Les fonctions utilisées dans main.ipynb sont importées depuis le fichier fonctions.py, généré à partir de fonctions.ipynb via la commande :
+jupyter nbconvert --to script fonctions.ipynb
 
 ---
 
-## 🧰 Stack technique comme étudié dans ce cours et des connaissances antérieurs
+## 🧰 Stack technique comme étudié dans ce cours et des connaissances antérieures
 
 | Outil | Usage |
 |-------|-------|
@@ -112,7 +115,7 @@ Le notebook télécharge les données depuis internet au premier lancement (~500
 
 ## 📋 Principaux résultats
 
-- **Tendance baissière** du nombre de tués entre 2015 et 2024, avec une rupture COVID en 2020.
+- **Tendance baissière** du nombre de tués entre 2015 et 2020, avec une rupture COVID en 2020.
 - La **nuit sans éclairage** est la condition environnementale la plus meurtrière.
 - Le **brouillard** est plus dangereux que la pluie (les conducteurs ralentissent sous la pluie mais pas sous le brouillard).
 - Les **hommes de 18-24 ans** et les **75 ans et plus** sont les profils les plus vulnérables.
@@ -123,6 +126,6 @@ Le notebook télécharge les données depuis internet au premier lancement (~500
 
 ## 👥 Auteurs
 
-Projet réalisé par DANSOU Victoire, SOUMAILA Nadia, TOE Dieudonn — ENSAI, 2025-2026.
+Projet réalisé par DANSOU Victoire, SOUMAILA SEKOU BERY Nadia, TOE Dieudonné — ENSAI, 2025-2026.
 
 ---
