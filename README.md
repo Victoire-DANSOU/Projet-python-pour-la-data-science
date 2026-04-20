@@ -84,10 +84,14 @@ Prédiction de la **gravité d'un accident** (grave = tué ou hospitalisé) avec
 ```bash
 git clone https://github.com/<votre-compte>/<votre-repo>.git
 cd <votre-repo>
+``` 
+
 Installer les dépendances :
 pip install -r requirements.txt
+
 Lancer Jupyter :
 jupyter notebook
+
 Ouvrir et exécuter le notebook :
 main.ipynb
 
