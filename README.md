@@ -8,9 +8,7 @@ Projet réalisé dans le cadre du cours de python pour la data science en 2A ENS
 
 ## Structure du projet
 
-```
-.
-├── fonctions.py # fonctions de traitement, visualisation et modélisation                  
+```                
 ├── fonctions.ipynb # version notebook (optionnelle, pour lecture)
 ├── main.ipynb # notebook principal qui exécute le pipeline
 ├── README.md # documentation du projet
